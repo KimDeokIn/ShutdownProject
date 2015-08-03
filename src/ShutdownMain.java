@@ -68,7 +68,17 @@ public class ShutdownMain implements ActionListener{
 		} else if (ae.getSource() == inform) {
 			showMessage("Info", "당신은 허가되지 않은 사용자입니다.\n암호를 입력하여 실행허가를 받으세요.");
 		} else if (ae.getSource() == mItemExit) {
-			new PasswordFrame(password);
+			intputMessage("경고!!", "암호를 입력하세요.");
+		}
+	}
+
+	private void intputMessage(String title, String message) {
+		String s = JOptionPane.showInputDialog(null, message, title, JOptionPane.WARNING_MESSAGE);
+		if(s != null && s.equals(password)){
+			showMessage(title,"사용이 허가되었습니다.");
+			System.exit(0);
+		} else {
+			showMessage(title,"암호를 잘못 입력하셨습니다!\n시간이 얼마 남지 않았습니다!!!!");
 		}
 	}
 
