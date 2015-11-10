@@ -68,7 +68,7 @@ public class ShutdownMain implements ActionListener{
 		} else if (ae.getSource() == inform) {
 			JOptionPane.showMessageDialog(null,  "당신은 허가되지 않은 사용자입니다.\n암호를 입력하여 실행허가를 받으세요.", "Info", JOptionPane.INFORMATION_MESSAGE);
 		} else if (ae.getSource() == mItemExit) {
-			new PasswordFrame(password);
+			new PasswordFrame(password, clock);
 		}
 	}
 	

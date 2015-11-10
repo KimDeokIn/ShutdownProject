@@ -54,6 +54,10 @@ implements ActionListener, WindowListener {
 		clockDisplay.setText(clock.getTime());
 	}
 
+	public void stopTimer(){
+		timer.stop();
+	}
+	
 	@Override
 	public void windowActivated(WindowEvent arg0) {
 		// TODO Auto-generated method stub

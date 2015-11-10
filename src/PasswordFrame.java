@@ -21,10 +21,11 @@ public class PasswordFrame extends WindowAdapter{
 	private JFrame frame;
 	private JPasswordField passwordField;
 	private String password;
+	private WallClock clock;
 	/**
 	 * Create the application.
 	 */
-	public PasswordFrame(String password) {
+	public PasswordFrame(String password, WallClock clock) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -36,6 +37,7 @@ public class PasswordFrame extends WindowAdapter{
 			}
 		});
 		this.password = password;
+		this.clock = clock;
 	}
 
 	/**
@@ -82,6 +84,7 @@ public class PasswordFrame extends WindowAdapter{
 			@Override
 			public void actionPerformed(ActionEvent ae) {
 				if (password.equals(passwordField.getText())) {
+					clock.stopTimer();
 					showMessage("확인!", "사용이 허가되었습니다.");
 					System.exit(0);
 				} else {
